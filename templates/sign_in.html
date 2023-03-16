@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/sign_in.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="logo">
+                <img src="http://127.0.0.1:5000/static/images/Irrigation.svg" alt="">
+                <h2>SFARM</h2>
+            </div>
+            <form  action="{{ url_for('signin') }}" method="post">
+                {% if mesage is defined and mesage %}
+                    <div class="msg">{{ mesage }}</div>
+                {% endif %}
+                {% if succ is defined and succ %}
+                    <div class="succ">{{ succ }}</div>
+                {% endif %}
+                <div class="input-field">
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Nhập tên đăng nhập"
+                        required
+                    />
+                    <img src="http://127.0.0.1:5000/static/images/Person.svg" alt="">
+                </div>
+                <div class="input-field">
+                    <input
+                        type="password"
+                        name="password"
+                        class="password"
+                        placeholder="Nhập mật khẩu"
+                        required
+                    />
+                    <img src="http://127.0.0.1:5000/static/images/Lock.svg" alt="">
+                </div>
+                <h3>Tôi đồng ý với những điều khoản và dịch vụ</h3>
+                <div class="input-field button">
+                    <button type="submit" name="submit">Đăng Kí</button>
+                </div>
+                <h3>Bạn đã có tài khoản? <a href="{{ url_for('login') }}">Đăng nhập</a></h3>
+                <div class="sp"></div>
+
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

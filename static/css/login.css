@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    height: 100%;
+    width: 100%;
+}
+
+.navbar{
+        position: sticky;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        top:0; left:0; right:0;
+        height: 60px;
+        padding: 0 40px;
+}
+.navbar .logo{
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img{
+    width: 45px;
+    height: 45px;
+}
+.navbar .logo h2{
+    color: #5DB075;
+}
+
+.main_part{
+    position: relative;
+    width: 100%;
+    height: 550px;
+    padding: 30px 150px 30px 0;
+    background-image: url("../images/bg.png");;
+}
+
+.navbar .btgroup{
+    display: flex;
+    align-items: center;
+}
+
+.navbar .btgroup a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.navbar .btgroup button{
+    padding-left: 0;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 100px;
+    background-color:#5DB075;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 44px;
+}
+.container{
+    float: right;
+    width: 470px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 20px rgba(38, 36, 131, 0.25);
+    border-radius: 8px;
+    padding-bottom: 30px;
+}
+.clear{
+    clear: both;
+}
+.container .form {
+    padding: 40px;
+    width: 100%;
+}
+
+.container .logo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .logo h2{
+    position: relative;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 66px;
+    color: #5DB075;
+}
+
+.container .logo img{
+    position: relative;
+    width: 72px;
+    height: 77px;
+    border-radius: 8px;
+}
+
+.form .input-field{
+    position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+
+}
+.form .msg{
+    color: red;
+}
+
+.input-field input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(217, 217, 217, 0.51);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: 'Manrope';
+    font-style: normal;
+    padding-left: 50px;
+    transition: all 0.2s ease;
+}
+
+.input-field img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+
+.input-field img.showHidePw {
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+  }
+.form h3{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+    margin-top: 10px;
+}
+.form h3 a{
+    text-decoration: none;
+    color: #5DB075;
+}
+.input-field button {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(217, 217, 217, 0.51);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: 'Manrope';
+    font-style: normal;
+    padding-left: 50px;
+    transition: all 0.2s ease;
+}
+.form .button button {
+    padding-left: 0;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    border-radius: 100px;
+    background-color:#5DB075;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 44px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.footer .foot-item{
+    width:  300px;
+    display: flex;
+    align-items: center;
+}

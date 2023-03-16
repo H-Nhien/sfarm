@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 100%;
+    height: 100%;
+}
+.container .nav{
+    float: left;
+    width: 17%;
+    height: 100%;
+    background: #F9F9F9;
+    border-radius: 20px 0px 0px 0px;
+}
+.nav .logo{
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 ;
+}
+
+.nav .logo img{
+    width: 45px;
+    height: 45px;
+}
+.nav .logo h2{
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    color: #5DB075;
+}
+.nav ul{
+    position: relative;
+    width: 90%;
+    margin: 0 10px 0 10px;
+}
+ul li a{
+    display: flex;
+    width: 99%;
+    height: 40px;
+    align-items: center;
+    padding: 5px 0;
+    margin: 2px 0;
+    text-decoration: none;
+    color: #878787;
+    background: rgba(93, 176, 117, 0.12);
+}
+li a img{
+    margin: 0 10px 0 20px ;
+}
+li a h4{
+    font-size: 16px;
+    font-weight: 500;
+}
+.container .main-part{
+    float: left;
+    width: 83%;
+    height: 100%;
+}
+
+.main-part .header{
+    position: sticky;
+    height: 70px;
+    justify-content: right;
+    align-items: center;
+    display: flex;
+    padding: 10px 30px 10px 0;
+}
+.header .user{
+    display: flex;
+    width: 150px;
+    align-items: center;
+    margin: 0 20px;
+}
+.header img{
+    width: 25px;
+    height: 25px;
+}
+.user img{
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+.main-part hr{
+    border: 1px solid #787878;
+    box-shadow: 1px 4px 100px rgba(0, 0, 0, 0.25);
+}
+.main-part .dash-board{
+    display: grid;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding: 30px 0 30px 0;
+}
+.dash-board select{
+    margin-bottom: 1.5rem;
+    text-align-last: center;
+    width: 50rem;
+    height: 35px;
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+    color: #5DB075;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1rem;
+    /*arrow*/
+    appearance: none;
+    background-image: url("../images/icon\ _chevron\ down\ arrow_.svg");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 1rem auto;
+}
+.dash-board .board{
+    display: grid;
+    justify-content: center;
+    width: 50rem;
+    height: 33rem;
+    background: #FAFAFA;
+    border-radius: 20px;
+    padding: 0.5rem 0;
+
+}
+.board .row{
+    display: flex;
+    justify-content: space-between;
+    height: 16rem;
+    width: 35rem;
+    margin: 0.5rem 0;
+}
+.row .card1{
+    display: grid;
+    justify-content: center;
+    height: 16rem;
+    width: 16rem;
+    background-position: center; 
+    background-size: cover;
+    background-image: url("../images/Ellipse\ 7\ \(2\).svg");
+}
+.row .card2{
+    display: grid;
+    justify-content: center;
+    height: 16rem;
+    width: 16rem;
+    background-position: center; 
+    background-size: cover;
+    background-image: url("../images/Ellipse\ 7\ \(1\).svg");
+}
+.row .card3{
+    display: grid;
+    justify-content: center;
+    height: 16rem;
+    width: 16rem;
+    background-position: center; 
+    background-size: cover;
+    background-image: url("../images/Ellipse\ 7.svg");
+}
+.row .card4{
+    display: grid;
+    justify-content: center;
+    height: 16rem;
+    width: 16rem;
+    background-position: center; 
+    background-size: cover;
+    background-image: url("../images/Ellipse\ 6.svg");
+}
+.row .title{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3rem;
+}
+.row .content{
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 1.5rem;
+}
+
+.card4 .title{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 2.8rem;
+    color:#FFFFFF;
+}
+.card4 .content{
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 1.5rem;
+}
+.container .clear{
+    clear: both;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/login.css">
+</head>
+<body>
+    <div class="box">
+        <div class="navbar">
+            <div class="logo">
+                <img src="http://127.0.0.1:5000/static/images/Irrigation.svg" alt="">
+                <h2>SFARM</h2>
+            </div>
+            <div class="btgroup">
+                <a href="">THÔNG TIN</a>
+                <form action="{{url_for('signin')}}">
+                    <button type="submit">ĐĂNG KÍ</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="main_part">
+            <div class="container">
+                <div class="form">
+                    <div class="logo">
+                        <img src="http://127.0.0.1:5000/static/images/Irrigation.svg" alt="">
+                        <h2>SFARM</h2>
+                    </div>
+                    <form action="{{ url_for('login') }}" method="post">
+                        {% if mesage is defined and mesage %}
+                            <div class="msg">{{ mesage }}</div>
+                        {% endif %}
+                        <div class="input-field">
+                            <input
+                                type="text"
+                                name="username"
+                                placeholder="Nhập tên đăng nhập"
+                                required
+                            />
+                            <img src="http://127.0.0.1:5000/static/images/Person.svg" alt="">
+                        </div>
+                        <div class="input-field">
+                            <input
+                                type="password"
+                                name="password"
+                                placeholder="Nhập mật khẩu"
+                                required
+                            />
+                            <img src="http://127.0.0.1:5000/static/images/Lock.svg" alt="">
+                        </div>
+                        <div class="input-field button">
+                            <button type="submit" name="submit">Đăng Nhập</button>
+                        </div>
+                        <h3> <a href="{{ url_for('signin') }}">Bạn chưa có tài khoản? Tạo tài khoản ngay.</a></h3>
+                        <h3> <a href="login.html">Quên mật khẩu? </a></h3>
+        
+                    </form>
+                </div>
+            </div>
+            <div class="clear"></div>    
+        </div>
+        <div class="footer">
+            <div class="foot-item">
+                <img src="http://127.0.0.1:5000/static/images/Mail outline.svg" alt="">
+                <p>Liên hệ với chúng tôi thông qua số điện thoại 0999 999 999</p>
+            </div>
+            <div class="foot-item">
+                <img src="http://127.0.0.1:5000/static/images/Phone android.svg" alt="">
+                <p>Liên hệ với chúng tôi thông qua emai sfram.vn@gmail.com</p>
+            </div>
+            <div class="foot-item">
+                <img src="http://127.0.0.1:5000/static/images/House.svg" alt="">
+                <p>Liên hệ với chúng tôi thông qua địa chỉ. 268 Lý Thường Kiệt, quận 10, Tp. Hồ Chí Minh</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

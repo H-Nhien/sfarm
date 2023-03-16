@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="logo">
+                <img src="http://127.0.0.1:5000/static/images/Irrigation.svg" alt="">
+                <h2>SFARM</h2>
+            </div>
+            <ul>
+                <li>
+                    <a href="{{ url_for('home') }}">
+                        <img src="http://127.0.0.1:5000/static/images/Vector.svg" alt="">
+                        <h4>Trang chủ</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="http://127.0.0.1:5000/static/images/icon _person_.svg" alt="">
+                        <h4>Hồ sơ</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="http://127.0.0.1:5000/static/images/Water Pipe.svg" alt="">
+                        <h4>Máy bơm</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="http://127.0.0.1:5000/static/images/Vector (1).svg" alt="">
+                        <h4>Tưới định kì</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="http://127.0.0.1:5000/static/images/Calculator.svg" alt="">
+                        <h4>Tưới tự động</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="http://127.0.0.1:5000/static/images/Vector (2).svg" alt="">
+                        <h4>Thống kê</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main-part">
+            <div class="header">
+                <img src="http://127.0.0.1:5000/static/images/notify.svg" alt="">
+                <div class="user">
+                    <img src="http://127.0.0.1:5000/static/images/img.png" alt="">
+                    <span>{{session.UserName}}</span>
+                </div>
+                <a href="{{ url_for('logout') }}"> <img src="http://127.0.0.1:5000/static/images/icon _sign out_.svg" alt="Logout"></a>
+            </div>
+            <hr>
+            <div class="dash-board">
+                <select name="" id="">
+                    {% for area in area %}
+                    <option value="{{area.Name}}">{{area.Name}} </option>
+                    {% endfor %}
+                </select>
+                <div class="board">
+                    <div class="row">
+                        <div class="card1">
+                            <div class="title">
+                                <p>{{record[0].Tempdata}}</p>
+                            </div>
+                            <div class="content">
+                                <p>Nhiệt độ (oC)</p>
+                            </div>
+                        </div>
+                        <div class="card2">
+                            <div class="title">
+                                <p>{{record[0].Moistdata}}</p>
+                            </div>
+                            <div class="content">
+                                <p>Độ Ẩm (%)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card3">
+                            <div class="title">
+                                <p>{{record[0].Lightdata}}</p>
+                            </div>
+                            <div class="content">
+                                <p>Ánh sáng (oK)</p>
+                            </div>
+                        </div>
+                        <div class="card4">
+                            <div class="title">
+                                <p>MÁY BƠM</p>
+                            </div>
+                            <div class="content">
+                                <p>{{status[0].Status}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</body>
+</html>
