@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/statictical-table.css">
+		<link rel="stylesheet" type="text/css" href="multiselectSrc/jquery.multiselect.css" />
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script type="text/javascript" src="ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" src="ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" src="multiselectSrc/jquery.multiselect.js"></script>
+		<script src="libs/d3.v3.min.js"></script>
+		<script src="libs/bootstrap.min.js"></script>
+		<script src="libs/d3.tip.v0.6.3.js"></script>
+		<script type="text/javascript">	
+
+		$(function(){
+		    $("select").multiselect({
+		    	header: true,
+                minWidth: 200,
+		        noneSelectedText: "Please select",
+		        checkAllText: "all",
+		        uncheckAllText: 'none',
+		        selectedList:3
+		    });
+		});
+		</script>
+    </head>
+
+
+    <body>
+        <div class = "statistical-tables screen">
+            <nav class = "navbar">
+                <div class = nav-bar-1></div>
+
+                <div class = "DieuHuong_control_pump">
+                    <img class = "nav" src = "img/Navbar.png" alt = "Vector" />
+                </div>
+                
+                <div class = "logo">
+                    <img class = "irrigation" src = "img/irrigation.png" alt="Irrigation" />
+                    <h1 class = "title">SFARM</h1>
+                </div>
+
+                <ul class = "overlap-group5">
+                    <div class = "navnav">
+                        <img class = "vector" src = "img/vector.png" alt = "Vector" />
+                        <a href="Homepage.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Trang chủ</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "icon-person" src = "img/icon-person.png" alt='icon "person"' />
+                        <a href="Profile.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Hồ sơ</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "water-pipe" src = "img/water-pipe.png" alt = "Water pipe"/>
+                        <a href="Control-pump.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Máy bơm</a>
+                    </div>
+
+                    <div class = "navnav">
+                        <img class = "vector-2 vector-3" src = "img/vector-2.png" alt="Vector"/>
+                        <a href="period-watering.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Tưới định kì</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "calculator" src = "img/Calculator.png" alt="Calculator"/>
+                        <a href="auto-watering.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Tưới tự động</a>
+                    </div>
+
+                    <div class = "navnav">
+                        <img class = "vector-1 vector-3" src = "img/vector-1.png" alt="Vector"/>
+                        <a href="statistic.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Thống kê</a>
+                    </div>
+                </ul>
+            </nav>
+            
+                <!--<div class = "flex-col">
+                    <div class = "overlap-group-container">
+                        <div class = "overlap-group6">
+                            <img class = "icon-bell" src = "img/icon-bell.png" alt = 'icon "bell"' />
+    
+                            <div class = "frame-user">
+                                <img class = "img" src = "img/img.png" alt = "img" />
+                                <div class = "user valign-text-middle ">Phan Thị</div>
+                            </div>
+                            
+                            <img class = "icon-sign-out" src = "img/icon-sign-out.png" alt='icon "sign out"' />
+                        </div>
+    
+                        <img class = "line-1" src="img/Line 1.png" alt = "Line 1" />
+                    </div>
+                </div>-->
+
+                
+            <div class = "set-up">
+                <div class = "box_control_pump Textsearch valign-text-middle manrope-norma-suva-white-30px">Cài đặt thời lượng bơm</div>
+                <div class = "box">
+                        <input type="number" min="000" max="999" step="1" value="00" class = "box_time manrope-norma-suva-gray-50px">
+                        <div class = 'manrope-norma-suva-gray-50px' style="margin-left: 10px; margin-right: 10px">:</div>
+                        <input type="number" min="000" max="60" step="1" value="00" class = "box_time manrope-norma-suva-gray-50px">
+                        <div class = "manrope-norma-suva-gray-50px" style="margin-left: 10px">PHÚT</div>
+                </div>
+
+                <select class = "area_pump Textsearch valign-text-middle manrope-semi-bold-green-24px" id = "select_area_pump" >
+                    <option value = "1" selected="selected">Khu vực cây ăn quả</option>
+                    <option value = "2">Khu vực rau củ</option>
+                    <option value = "3">Khu vực trồng hoa</option>
+                    <option value = "4">Khu vực cây kiểng</option>
+                </select>   
+            </div>
+
+            <button class = 'Bom Green_50px'>BƠM</button>
+            <button class = 'Ngung White_50px'>DỪNG</button>
+        </div>
+    </body>
+</html>

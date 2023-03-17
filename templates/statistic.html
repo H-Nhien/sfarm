@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/statictical-table.css">
+		<link rel="stylesheet" type="text/css" href="multiselectSrc/jquery.multiselect.css" />
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script type="text/javascript" src="ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" src="ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" src="multiselectSrc/jquery.multiselect.js"></script>
+		<script src="libs/d3.v3.min.js"></script>
+		<script src="libs/bootstrap.min.js"></script>
+		<script src="libs/d3.tip.v0.6.3.js"></script>
+		<script type="text/javascript">	
+
+		$(function(){
+		    $("select").multiselect({
+		    	header: true,
+                minWidth: 200,
+		        noneSelectedText: "Please select",
+		        checkAllText: "all",
+		        uncheckAllText: 'none',
+		        selectedList:3
+		    });
+		});
+		</script>
+    </head>
+
+
+    <body>
+        <div class = "statistical-tables screen">
+            <nav class = "navbar">
+                <div class = nav-bar-1></div>
+
+                <div class = "DieuHuong_static">
+                    <img class = "nav" src = "img/Navbar.png" alt = "Vector" />
+                </div>
+
+                <div class = "logo">
+                    <img class = "irrigation" src = "img/irrigation.png" alt="Irrigation" />
+                    <h1 class = "title">SFARM</h1>
+                </div>
+
+                <ul class = "overlap-group5">
+                    <div class = "navnav">
+                        <img class = "vector" src = "img/vector.png" alt = "Vector" />
+                        <a href="Homepage.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Trang chủ</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "icon-person" src = "img/icon-person.png" alt='icon "person"' />
+                        <a href="Profile.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Hồ sơ</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "water-pipe" src = "img/water-pipe.png" alt = "Water pipe" />
+                        <a href="Control-pump.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Máy bơm</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "vector-2 vector-3" src = "img/vector-2.png" alt="Vector" />
+                        <a href="period-watering.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Tưới định kì</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "calculator" src = "img/Calculator.png" alt="Calculator" />
+                        <a href="auto-watering.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Tưới tự động</a>
+                    </div>
+
+                    <div class = "navnav">
+                        <img class = "vector-1 vector-3" src = "img/vector-1.png" alt="Vector" />
+                        <a href="statistic.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Thống kê</a>
+                    </div>
+                </ul>
+            </nav>
+        
+            
+            <!--<div class = "flex-col">
+                <div class = "overlap-group-container">
+                    <div class = "overlap-group6">
+                        <img class = "icon-bell" src = "img/icon-bell.png" alt = 'icon "bell"' />
+
+                        <div class = "frame-user">
+                            <img class = "img" src = "img/img.png" alt = "img" />
+                            <div class = "user valign-text-middle ">Phan Thị</div>
+                        </div>
+                        
+                        <img class = "icon-sign-out" src = "img/icon-sign-out.png" alt='icon "sign out"' />
+                    </div>
+
+                    <img class = "line-1" src="img/Line 1.png" alt = "Line 1" />
+                </div>
+            </div>-->
+            
+            <select class = "area Textsearch valign-text-middle manrope-semi-bold-white-24px" id = "select_area" >
+                <option value = "1" selected="selected">Khu vực cây ăn quả</option>
+                <option value = "2">Khu vực rau củ</option>
+                <option value = "3">Khu vực trồng hoa</option>
+                <option value = "4">Khu vực cây kiểng</option>
+            </select>
+                    
+            <div class = "main">
+                <form class = "search">
+                    
+                    <select id = "select_element" class = "overlap-group1 Textsearch manrope-norma-suva-gray-18px">
+                        <option value = "Temp">Nhiệt độ</option>
+                        <option value = "Moist">Độ ẩm</option>
+                        <option value = "Light">Ánh sáng</option>
+                        <option value = "All" selected="selected">Tất cả</option>
+                    </select>
+
+                    <select id = "select_unit" class = "overlap-group1 Textsearch manrope-norma-suva-gray-18px">
+                        <option value = "month">Tháng</option>
+                        <option value = "week">Tuần</option>
+                        <option value = "day">Ngày</option>
+                        <option value = "hour" selected="selected">Giờ</option>
+                    </select>
+                    
+                    <input id = "select_TimeStart" type = "datetime-local" class = "overlap-group2 Textsearch manrope-norma-suva-gray-18px">
+
+                    <input id = "select_End" type = "datetime-local" class = "overlap-group2 Textsearch manrope-norma-suva-gray-18px">
+        
+                    <button class = "overlap-group Textsearch manrope-semi-bold-white-24px" >Tìm kiếm</button>
+                </form>
+                
+                <div class = "frame-chart">
+                    <div class = "histogram">
+                        <div class = "chart_statis valign-text-middle black-15px"> Bieu do nhiet do </div>
+                        <div class = "chart">
+                            
+                        </div>
+                    </div>
+                    <div class = "histogram">
+                        <div class = "chart_statis valign-text-middle black-15px"> Bieu do nhiet do </div>
+                        <div class = "chart">
+                            
+                        </div>
+                    </div>
+                    <div class = "histogram">
+                        <div class = "chart_statis valign-text-middle black-15px"> Bieu do nhiet do </div>
+                        <div class = "chart">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script content="functions and global parameters">
+            function makeChart(send_data, atrrname) 
+            {
+                $.post('/statistical_table', send_data, function(data) 
+                {
+                    var weight = $('.chart').width();
+                    var height = $('.chart').height();
+
+                })
+            }
+        </script>
+
+        <script content="Statistical">
+            d3.select("button").on("click", function() {
+
+				var select_area = $("#select_area").val();
+				var select_element = $("#select_element").val();
+				var select_unit = $("#select_unit").val();
+				var select_TimeStart = document.getElementById("select_TimeStart").value;
+				var select_TimeEnd = document.getElementById("select_TimeEnd").value;
+
+				var send_data = {area: select_area, element: select_element, unit: select_unit,
+                TimeStart: select_TimeStart, TimeEnd: select_TimeEnd};
+
+				if(select_element = "All")
+				{
+					var send_data = {area: select_area, element: "Temp", unit: select_unit, TimeStart: select_TimeStart, TimeEnd: select_TimeEnd};
+                    makeChart(send_data, "Temp");
+
+                    var send_data = {area: select_area, element: "Moist", unit: select_unit, TimeStart: select_TimeStart, TimeEnd: select_TimeEnd};
+                    makeChart(send_data, "Moist");
+
+                    var send_data = {area: select_area, element: "Light", unit: select_unit, TimeStart: select_TimeStart, TimeEnd: select_TimeEnd};
+                    makeChart(send_data, "Light");
+				}
+
+				else
+                {
+                    makeChart(send_data, select_element);
+                }
+				
+			});
+        </script>
+    </body>
+
+</html>
+
+
+
