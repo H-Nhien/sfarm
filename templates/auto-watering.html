@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/statictical-table.css">
+		<link rel="stylesheet" href="css/auto-watering.css">
+		<link rel="stylesheet" type="text/css" href="multiselectSrc/jquery.multiselect.css" />
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script type="text/javascript" src="ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" src="ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" src="multiselectSrc/jquery.multiselect.js"></script>
+		<script src="libs/d3.v3.min.js"></script>
+		<script src="libs/bootstrap.min.js"></script>
+		<script src="libs/d3.tip.v0.6.3.js"></script>
+		
+    </head>
+
+
+    <body>
+        <div class = "statistical-tables screen">
+            <nav class = "navbar">
+                <div class = nav-bar-1></div>
+
+                <div class = "DieuHuong-auto">
+                    <img class = "nav" src = "img/Navbar.png" alt = "Vector" />
+                </div>
+
+                <div class = "logo">
+                    <img class = "irrigation" src = "img/irrigation.png" alt="Irrigation" />
+                    <h1 class = "title">SFARM</h1>
+                </div>
+
+                <ul class = "overlap-group5">
+                    <div class = "navnav">
+                        <img class = "vector" src = "img/vector.png" alt = "Vector" />
+                        <a href="Homepage.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Trang chủ</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "icon-person" src = "img/icon-person.png" alt='icon "person"' />
+                        <a href="Profile.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Hồ sơ</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "water-pipe" src = "img/water-pipe.png" alt = "Water pipe" />
+                        <a href="Control-pump.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Máy bơm</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "vector-1 vector-3" src = "img/vector-1.png" alt="Vector" />
+                        <a href="statistic.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Thống kê</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "vector-2 vector-3" src = "img/vector-2.png" alt="Vector" />
+                        <a href="period-watering.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Tưới định kì</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "calculator" src = "img/Calculator.png" alt="Calculator" />
+                        <a href="auto-watering.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Tưới tự động</a>
+                    </div>
+                </ul>
+            </nav>
+        
+            
+            <div class = "flex-col">
+                <div class = "overlap-group-container">
+                    <div class = "overlap-group6">
+                        <img class = "icon-bell" src = "img/icon-bell.png" alt = 'icon "bell"' />
+
+                        <div class = "frame-user">
+                            <img class = "img" src = "img/img.png" alt = "img" />
+                            <div class = "user valign-text-middle ">User</div>
+                        </div>
+                        
+                        <img class = "icon-sign-out" src = "img/icon-sign-out.png" alt='icon "sign out"' />
+                    </div>
+                </div>
+            </div>  
+            <!-- <div class = "line"></div> -->
+<!-- -------------------------------------------------------------------------------------------------------------- -->
+            <div class = "main-auto-watering">
+                <!-- Khu vực 1 -->
+                <div class = "w-area" id = "area-1">
+                    <div class = "col-1">
+                        <div class = "dai-dien dinh-dang-area">
+                            <p class = "ten dinh-dang-chu"> Khu vực cây ăn quả</p>
+                            
+                            <button class = "xem-them-button" onclick = "an_hien_khung_chi_tiet(1);">
+                                <img class = "mo-rong" src = "img/mo-rong-1.png" alt='icon "mo-rong"' />
+                            </button>
+                        </div>
+                        
+                        <div class = "toan-khung-chi-tiet" id = "toan-khung-chi-tiet-1">
+                            <div class = "khung-chi-tiet">
+                                <div class = "chi-tiet">
+                                    <div class = "chi-tiet-nho">
+                                        <input type = "text" class = "input-do-am" id = "input-do-am-1" onclick = "input_do_am(1);">
+                                    </div>
+                                        
+                                    <div class = "chi-tiet-nho">
+                                        <input type = "text" class = "input-do-am" id = "input-thoi-luong-1" onclick = "input_thoi_luong(1);">
+                                    </div>
+                                </div>
+        
+                                <button class = "khung-xac-nhan" onclick = "xac_nhan(1);">
+                                    <p class = "xac-nhan"> Xác nhận</p>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <img class = "close" onclick = "xoa_khu_vuc(1);" src = "img/Close.png" alt='icon "close"' />
+                </div>
+                
+                <!-- Khu vực 2 -->
+                <div class = "w-area" id = "area-2">
+                    <div class = "col-1">
+                        <div class = "dai-dien dinh-dang-area">
+                            <p class = "ten dinh-dang-chu"> Khu vực cây rau củ</p>
+                            
+                            <button class = "xem-them-button" onclick = "an_hien_khung_chi_tiet(2);">
+                                <img class = "mo-rong" src = "img/mo-rong-1.png" alt='icon "mo-rong"' />
+                            </button>
+                        </div>
+                        
+                        <div class = "toan-khung-chi-tiet" id = "toan-khung-chi-tiet-2">
+                            <div class = "khung-chi-tiet">
+                                <div class = "chi-tiet">
+                                    <div class = "chi-tiet-nho">
+                                        <input type = "text" class = "input-do-am" id = "input-do-am-2" onclick = "input_do_am(2);">
+                                    </div>
+                                        
+                                    <div class = "chi-tiet-nho">
+                                        <input type = "text" class = "input-do-am" id = "input-thoi-luong-2" onclick = "input_thoi_luong(2);">
+                                    </div>
+                                </div>
+        
+                                <button class = "khung-xac-nhan" onclick = "xac_nhan(2);">
+                                    <p class = "xac-nhan"> Xác nhận</p>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <img class = "close" onclick = "xoa_khu_vuc(2);" src = "img/Close.png" alt='icon "close"' />
+                </div>
+                
+                <!-- Khu vực 3 -->
+                <div class = "w-area" id = "area-3">
+                    <div class = "col-1">
+                        <div class = "dai-dien dinh-dang-area">
+                            <p class = "ten dinh-dang-chu"> Khu vực trồng hoa</p>
+                            
+                            <button class = "xem-them-button" onclick = "an_hien_khung_chi_tiet(3);">
+                                <img class = "mo-rong" src = "img/mo-rong-1.png" alt='icon "mo-rong"' />
+                            </button>
+                        </div>
+                        
+                        <div class = "toan-khung-chi-tiet" id = "toan-khung-chi-tiet-3">
+                            <div class = "khung-chi-tiet">
+                                <div class = "chi-tiet">
+                                    <div class = "chi-tiet-nho">
+                                        <input type = "text" class = "input-do-am" id = "input-do-am-3" onclick = "input_do_am(3);">
+                                    </div>
+                                        
+                                    <div class = "chi-tiet-nho">
+                                        <input type = "text" class = "input-do-am" id = "input-thoi-luong-3" onclick = "input_thoi_luong(3);">
+                                    </div>
+                                </div>
+        
+                                <button class = "khung-xac-nhan" onclick = "xac_nhan(3);">
+                                    <p class = "xac-nhan"> Xác nhận</p>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <img class = "close" onclick = "xoa_khu_vuc(3);" src = "img/Close.png" alt='icon "close"' />
+                </div>
+
+                <!-- Khu vực 4 -->
+                <div class = "w-area" id = "area-4">
+                    <div class = "col-1">
+                        <div class = "dai-dien dinh-dang-area">
+                            <p class = "ten dinh-dang-chu"> Khu vực cây kiểng</p>
+                            
+                            <button class = "xem-them-button" onclick = "an_hien_khung_chi_tiet(4);">
+                                <img class = "mo-rong" src = "img/mo-rong-1.png" alt='icon "mo-rong"' />
+                            </button>
+                        </div>
+                        
+                        <div class = "toan-khung-chi-tiet" id = "toan-khung-chi-tiet-4">
+                            <div class = "khung-chi-tiet">
+                                <div class = "chi-tiet">
+                                    <div class = "chi-tiet-nho">
+                                        <input type = "text" class = "input-do-am" id = "input-do-am-4" onclick = "input_do_am(4);">
+                                    </div>
+                                        
+                                    <div class = "chi-tiet-nho">
+                                        <input type = "text" class = "input-do-am" id = "input-thoi-luong-4" onclick = "input_thoi_luong(4);">
+                                    </div>
+                                </div>
+        
+                                <button class = "khung-xac-nhan" onclick = "xac_nhan(4);">
+                                    <p class = "xac-nhan"> Xác nhận</p>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <img class = "close" onclick = "xoa_khu_vuc(4);" src = "img/Close.png" alt='icon "close"' />
+                </div>
+
+                <!-- Thêm khu vực -->
+
+                <div class = "w-area" id = "add-area">
+                    <div class = "col-1">
+                        <div class = "dai-dien dinh-dang-area-them">
+                            <p class = "ten dinh-dang-chu-them"> Thêm khu vực mới</p>
+    
+                            <button class = "xem-them-button" onclick = "an_hien_chon_khu_vuc();">
+                                <img class = "mo-rong" src = "img/mo-rong-3.png" alt='icon "mo-rong"'/>
+                            </button>
+                        </div>
+                        
+                        <div id = "chon-khu-vuc">
+                            <p class = "ten-khu-vuc" onclick = "them_khu_vuc(1);">Khu vực cây ăn quả</p>
+                            <p class = "ten-khu-vuc" onclick = "them_khu_vuc(2);">Khu vực rau củ</p>
+                            <p class = "ten-khu-vuc" onclick = "them_khu_vuc(3);">Khu vực trồng hoa</p>
+                            <p class = "ten-khu-vuc" onclick = "them_khu_vuc(4);">Khu vực cây kiểng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<script>
+    function an_hien_khung_chi_tiet(i){
+        if(document.getElementById("toan-khung-chi-tiet-" + String(i)).style.display == 'none')
+        
+            {document.getElementById("toan-khung-chi-tiet-" + String(i)).style.display = 'block';}
+
+        else {document.getElementById("toan-khung-chi-tiet-" + String(i)).style.display = 'none';}
+    }
+
+    if(document.getElementById("input-do-am-1").value == "") {
+        document.getElementById("input-do-am-1").value = "Độ ẩm thấp nhất (%)" ;
+    }
+    if(document.getElementById("input-thoi-luong-1").value == "") {
+        document.getElementById("input-thoi-luong-1").value = "Thời lượng tưới (phút)" ;
+    }
+
+    if(document.getElementById("input-do-am-2").value == "") {
+        document.getElementById("input-do-am-2").value = "Độ ẩm thấp nhất (%)" ;
+    }
+    if(document.getElementById("input-thoi-luong-2").value == "") {
+        document.getElementById("input-thoi-luong-2").value = "Thời lượng tưới (phút)" ;
+    }
+
+    if(document.getElementById("input-do-am-3").value == "") {
+        document.getElementById("input-do-am-3").value = "Độ ẩm thấp nhất (%)" ;
+    }
+    if(document.getElementById("input-thoi-luong-3").value == "") {
+        document.getElementById("input-thoi-luong-3").value = "Thời lượng tưới (phút)" ;
+    }
+
+    if(document.getElementById("input-do-am-4").value == "") {
+        document.getElementById("input-do-am-4").value = "Độ ẩm thấp nhất (%)" ;
+    }
+    if(document.getElementById("input-thoi-luong-4").value == "") {
+        document.getElementById("input-thoi-luong-4").value = "Thời lượng tưới (phút)" ;
+    }
+
+    function input_do_am(i){
+        document.getElementById("input-do-am-" + String(i)).value = "" ;
+    }
+
+    function input_thoi_luong(i){
+        document.getElementById("input-thoi-luong-" + String(i)).value = "" ;
+    }
+
+    function xac_nhan(i){
+        document.getElementById("toan-khung-chi-tiet-" + String(i)).style.display = 'none';
+    }
+
+    function xoa_khu_vuc(i){
+        document.getElementById("toan-khung-chi-tiet-" + String(i)).style.display = 'none';
+        document.getElementById("area-" +String(i)).style.display = 'none';
+    }
+
+    function an_hien_chon_khu_vuc(){
+        if(document.getElementById("chon-khu-vuc").style.display == 'none')
+        
+            {document.getElementById("chon-khu-vuc").style.display = 'flex';}
+
+        else { document.getElementById("chon-khu-vuc").style.display = 'none';}
+    }
+
+    function them_khu_vuc(i){
+        document.getElementById("area-" + String(i)).style.display = 'flex';
+        document.getElementById("input-do-am-" + String(i)).value = "Độ ẩm thấp nhất (%)" ;
+        document.getElementById("input-thoi-luong-" + String(i)).value = "Thời lượng tưới (phút)" ;
+        document.getElementById("chon-khu-vuc").style.display = 'none';
+    }
+</script>
+        </div>
+    </body>
+
+</html>

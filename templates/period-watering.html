@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/statictical-table.css">
+		<link rel="stylesheet" href="css/period-watering.css">
+		<link rel="stylesheet" type="text/css" href="multiselectSrc/jquery.multiselect.css" />
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script type="text/javascript" src="ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" src="ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" src="multiselectSrc/jquery.multiselect.js"></script>
+		<script src="libs/d3.v3.min.js"></script>
+		<script src="libs/bootstrap.min.js"></script>
+		<script src="libs/d3.tip.v0.6.3.js"></script>
+		
+    </head>
+
+
+    <body>
+        <div class = "statistical-tables screen">
+            <nav class = "navbar">
+                <div class = nav-bar-1></div>
+
+                <div class = "DieuHuong-period">
+                    <img class = "nav" src = "img/Navbar.png" alt = "Vector" />
+                </div>
+
+                <div class = "logo">
+                    <img class = "irrigation" src = "img/irrigation.png" alt="Irrigation" />
+                    <h1 class = "title">SFARM</h1>
+                </div>
+
+                <ul class = "overlap-group5">
+                    <div class = "navnav">
+                        <img class = "vector" src = "img/vector.png" alt = "Vector" />
+                        <a href="Homepage.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Trang chủ</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "icon-person" src = "img/icon-person.png" alt='icon "person"' />
+                        <a href="Profile.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Hồ sơ</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "water-pipe" src = "img/water-pipe.png" alt = "Water pipe" />
+                        <a href="Control-pump.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Máy bơm</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "vector-1 vector-3" src = "img/vector-1.png" alt="Vector" />
+                        <a href="statistic.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Thống kê</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "vector-2 vector-3" src = "img/vector-2.png" alt="Vector" />
+                        <a href="period-watering.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Tưới định kì</a>
+                    </div>
+        
+                    <div class = "navnav">
+                        <img class = "calculator" src = "img/Calculator.png" alt="Calculator" />
+                        <a href="auto-watering.html" class = "navtext valign-text-middle manrope-medium-suva-gray-20px">Tưới tự động</a>
+                    </div>
+                </ul>
+            </nav>
+        
+            
+            <div class = "flex-col">
+                <div class = "overlap-group-container">
+                    <div class = "overlap-group6">
+                        <img class = "icon-bell" src = "img/icon-bell.png" alt = 'icon "bell"' />
+
+                        <div class = "frame-user">
+                            <img class = "img" src = "img/img.png" alt = "img" />
+                            <div class = "user valign-text-middle ">User</div>
+                        </div>
+                        
+                        <img class = "icon-sign-out" src = "img/icon-sign-out.png" alt='icon "sign out"' />
+                    </div>
+
+                    <!-- <img class = "line-1" src="img/Line 1.png" alt = "Line 1" /> -->
+                </div>
+            </div>  
+            <!-- ------------------------------------------------------------------------------------------------------------------            -->
+            <div class = "main-period-watering">
+                <!-- Khu vực 1 -->
+                <div class = "p-area" id = "area-1">
+                    <div class = "col-1">
+                        <div class = "dai-dien dinh-dang-area">
+                            <p class = "ten dinh-dang-chu"> Khu vực cây ăn quả</p>
+                            
+                            <button class = "xem-them-button" id = "xem-them-button-1" onclick = "an_hien_khung_chi_tiet(1);">
+                                <img class = "mo-rong" src = "img/mo-rong-1.png" alt='icon "mo-rong"' />
+                            </button>
+                        </div>
+                        
+                        <div class = "khung-chi-tiet" id = "khung-chi-tiet-1">
+                        
+                            <div class = "chi-tiet">
+                                <div class = "dinh-danh">
+                                    <p class = "mo-ta mo-ta-them">Thêm tưới định kỳ</p>
+                                </div>
+                                
+                                <button class = "add" id = "add-1" onclick = "an_hien_them_cai_dat(1);">
+                                    <img class = "icon-add" src = "img/Plus.png" alt='icon "add"' />
+                                </button>
+                            </div>
+                            
+                            <div class = "cai-dat" id = "cai-dat-1">
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Thời lượng tưới</p>
+                                    </div>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-1-1">
+
+                                    <p class = "time">PHÚT</p>
+                                </div>
+
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Thời gian tưới</p>
+                                    </div>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-1-2">
+
+                                    <p class = "time">:</p>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-1-3">
+
+                                    <select id = "select-1-1">
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
+                                    </select>
+                                </div>
+
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Chu kỳ tưới</p>
+                                    </div>
+
+                                    <select id = "select-1-2">
+                                        <option value="Mỗi ngày">Mỗi ngày</option>
+                                        <option value="2 ngày">2 ngày</option>
+                                        <option value="3 ngày">3 ngày</option>
+                                        <option value="Mỗi tuần">Mỗi tuần</option>
+                                        <option value="2 tuần">2 tuần</option>
+                                        <option value="Mỗi tháng">Mỗi tháng</option>
+                                    </select>
+                                </div>
+                                
+                                <button class = "button-xac-nhan" onclick = "xac_nhan_cai_dat(1);">
+                                    <p class = "xac-nhan">Xác nhận</p>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <img class = "close" id = "close-1" onclick = "xoa_khu_vuc(1);" src = "img/Close.png" alt='icon "close"' />
+                </div>
+                <!-- Khu vực 2 -->
+                <div class = "p-area" id = "area-2">
+                    <div class = "col-1">
+                        <div class = "dai-dien dinh-dang-area">
+                            <p class = "ten dinh-dang-chu"> Khu vực rau củ</p>
+                            
+                            <button class = "xem-them-button" id = "xem-them-button-2" onclick = "an_hien_khung_chi_tiet(2);">
+                                <img class = "mo-rong" src = "img/mo-rong-1.png" alt='icon "mo-rong"' />
+                            </button>
+                        </div>
+                        
+                        <div class = "khung-chi-tiet" id = "khung-chi-tiet-2">
+                            
+                            <div class = "chi-tiet">
+                                <div class = "dinh-danh">
+                                    <p class = "mo-ta mo-ta-them">Thêm tưới định kỳ</p>
+                                </div>
+                                
+                                <button class = "add" id = "add-2" onclick = "an_hien_them_cai_dat(2);">
+                                    <img class = "icon-add" src = "img/Plus.png" alt='icon "add"' />
+                                </button>
+                            </div>
+                            
+                            <div class = "cai-dat" id = "cai-dat-2">
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Thời lượng tưới</p>
+                                    </div>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-2-1">
+
+                                    <p class = "time">PHÚT</p>
+                                </div>
+
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Thời gian tưới</p>
+                                    </div>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-2-2">
+
+                                    <p class = "time">:</p>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-2-3">
+
+                                    <select id = "select-2-1">
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
+                                    </select>
+                                </div>
+
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Chu kỳ tưới</p>
+                                    </div>
+
+                                    <select id = "select-2-2">
+                                        <option value="Mỗi ngày">Mỗi ngày</option>
+                                        <option value="2 ngày">2 ngày</option>
+                                        <option value="3 ngày">3 ngày</option>
+                                        <option value="Mỗi tuần">Mỗi tuần</option>
+                                        <option value="2 tuần">2 tuần</option>
+                                        <option value="Mỗi tháng">Mỗi tháng</option>
+                                    </select>
+                                </div>
+                                
+                                <button class = "button-xac-nhan" onclick = "xac_nhan_cai_dat(2);">
+                                    <p class = "xac-nhan">Xác nhận</p>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <img class = "close" id = "close-2" onclick = "xoa_khu_vuc(2);" src = "img/Close.png" alt='icon "close"' />
+                </div>
+                <!-- Khu vực 3 -->
+                <div class = "p-area" id = "area-3">
+                    <div class = "col-1">
+                        <div class = "dai-dien dinh-dang-area">
+                            <p class = "ten dinh-dang-chu"> Khu vực trồng hoa</p>
+                            
+                            <button class = "xem-them-button" id = "xem-them-button-3" onclick = "an_hien_khung_chi_tiet(3);">
+                                <img class = "mo-rong" src = "img/mo-rong-1.png" alt='icon "mo-rong"' />
+                            </button>
+                        </div>
+                        
+                        <div class = "khung-chi-tiet" id = "khung-chi-tiet-3">
+                            
+                            <div class = "chi-tiet">
+                                <div class = "dinh-danh">
+                                    <p class = "mo-ta mo-ta-them">Thêm tưới định kỳ</p>
+                                </div>
+                                
+                                <button class = "add" id = "add-3" onclick = "an_hien_them_cai_dat(3);">
+                                    <img class = "icon-add" src = "img/Plus.png" alt='icon "add"' />
+                                </button>
+                            </div>
+                            
+                            <div class = "cai-dat" id = "cai-dat-3">
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Thời lượng tưới</p>
+                                    </div>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-3-1">
+
+                                    <p class = "time">PHÚT</p>
+                                </div>
+
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Thời gian tưới</p>
+                                    </div>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-3-2">
+
+                                    <p class = "time">:</p>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-3-3">
+
+                                    <select id = "select-3-1">
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
+                                    </select>
+                                </div>
+
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Chu kỳ tưới</p>
+                                    </div>
+
+                                    <select id = "select-3-2">
+                                        <option value="Mỗi ngày">Mỗi ngày</option>
+                                        <option value="2 ngày">2 ngày</option>
+                                        <option value="3 ngày">3 ngày</option>
+                                        <option value="Mỗi tuần">Mỗi tuần</option>
+                                        <option value="2 tuần">2 tuần</option>
+                                        <option value="Mỗi tháng">Mỗi tháng</option>
+                                    </select>
+                                </div>
+                                
+                                <button class = "button-xac-nhan" onclick = "xac_nhan_cai_dat(3);">
+                                    <p class = "xac-nhan">Xác nhận</p>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <img class = "close" id = "close-3" onclick = "xoa_khu_vuc(3);" src = "img/Close.png" alt='icon "close"' />
+                </div>
+                <!-- Khu vực 4 -->
+                <div class = "p-area" id = "area-4">
+                    <div class = "col-1">
+                        <div class = "dai-dien dinh-dang-area">
+                            <p class = "ten dinh-dang-chu"> Khu vực cây kiểng</p>
+                            
+                            <button class = "xem-them-button" id = "xem-them-button-4" onclick = "an_hien_khung_chi_tiet(4);">
+                                <img class = "mo-rong" src = "img/mo-rong-1.png" alt='icon "mo-rong"' />
+                            </button>
+                        </div>
+                        
+                        <div class = "khung-chi-tiet" id = "khung-chi-tiet-4">
+                            
+                            <div class = "chi-tiet">
+                                <div class = "dinh-danh">
+                                    <p class = "mo-ta mo-ta-them">Thêm tưới định kỳ</p>
+                                </div>
+                                
+                                <button class = "add" id = "add-4" onclick = "an_hien_them_cai_dat(4);">
+                                    <img class = "icon-add" src = "img/Plus.png" alt='icon "add"' />
+                                </button>
+                            </div>
+                            
+                            <div class = "cai-dat" id = "cai-dat-4">
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Thời lượng tưới</p>
+                                    </div>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-4-1">
+
+                                    <p class = "time">PHÚT</p>
+                                </div>
+
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Thời gian tưới</p>
+                                    </div>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-4-2">
+
+                                    <p class = "time">:</p>
+                                    
+                                    <input type="text" class = "input-time" id = "input-time-4-3">
+
+                                    <select id = "select-4-1">
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
+                                    </select>
+                                </div>
+
+                                <div class = "info">
+                                    <div class = "ten-dai-dien">
+                                        <p class = "ten-chi-tiet">Chu kỳ tưới</p>
+                                    </div>
+
+                                    <select id = "select-4-2">
+                                        <option value="Mỗi ngày">Mỗi ngày</option>
+                                        <option value="2 ngày">2 ngày</option>
+                                        <option value="3 ngày">3 ngày</option>
+                                        <option value="Mỗi tuần">Mỗi tuần</option>
+                                        <option value="2 tuần">2 tuần</option>
+                                        <option value="Mỗi tháng">Mỗi tháng</option>
+                                    </select>
+                                </div>
+                                
+                                <button class = "button-xac-nhan" onclick = "xac_nhan_cai_dat(4);">
+                                    <p class = "xac-nhan">Xác nhận</p>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <img class = "close" id = "close-4" onclick = "xoa_khu_vuc(4);" src = "img/Close.png" alt='icon "close"' />
+                </div>
+                <!-- Thêm khu vực -->
+                <div class = "p-area" id = "add-area">
+                    <div class = "col-1">
+                        <div class = "dai-dien dinh-dang-area-them">
+                            <p class = "ten dinh-dang-chu-them">Thêm khu vực</p>
+                            
+                            <button class = "xem-them-button" onclick = "an_hien_chon_khu_vuc();">
+                                <img class = "mo-rong" src = "img/mo-rong-3.png" alt='icon "mo-rong"'/>
+                            </button>
+                        </div>
+
+                        <div id = "chon-khu-vuc">
+                            <p class = "ten-khu-vuc" onclick = "them_khu_vuc(1);">Khu vực cây ăn quả</p>
+                            <p class = "ten-khu-vuc" onclick = "them_khu_vuc(2);">Khu vực rau củ</p>
+                            <p class = "ten-khu-vuc" onclick = "them_khu_vuc(3);">Khu vực trồng hoa</p>
+                            <p class = "ten-khu-vuc" onclick = "them_khu_vuc(4);">Khu vực cây kiểng</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ẩn hiện khung chi tiết -->
+            
+            <script>
+                function an_hien_khung_chi_tiet(i){
+                    if(document.getElementById("khung-chi-tiet-" + String(i)).style.display == 'none')
+                    
+                        {document.getElementById("khung-chi-tiet-" + String(i)).style.display = 'flex';}
+            
+                    else { document.getElementById("cai-dat-" + String(i)).style.display = 'none';
+                        document.getElementById("khung-chi-tiet-" + String(i)).style.display = 'none';}
+                }
+                function an_hien_chon_khu_vuc(){
+                    if(document.getElementById("chon-khu-vuc").style.display == 'none')
+                    
+                        {document.getElementById("chon-khu-vuc").style.display = 'flex';}
+            
+                    else { document.getElementById("chon-khu-vuc").style.display = 'none';}
+                }
+            </script>
+            <!-- ẩn hiện thêm cài đặt -->
+            <script>
+                function an_hien_them_cai_dat(i){
+                    if(document.getElementById("cai-dat-" + String(i)).style.display == 'none')
+                    
+                        {document.getElementById("cai-dat-" + String(i)).style.display = 'flex';}
+            
+                    else {document.getElementById("cai-dat-" + String(i)).style.display = 'none';}
+                }
+            </script>
+            <!-- xác nhận cài đặt -->
+            <script>
+                function xac_nhan_cai_dat(i){
+                    tao_lich_tuoi(i);
+                    document.getElementById("cai-dat-" + String(i)).style.display = 'none' ;
+                    
+                }
+            </script>
+            <!-- Xóa khu vực -->
+            <script>
+                function xoa_khu_vuc(i){
+                    document.getElementById("cai-dat-" + String(i)).style.display = 'none';
+                    document.getElementById("khung-chi-tiet-" + String(i)).style.display = 'none';
+                    document.getElementById("area-" +String(i)).style.display = 'none';
+                }
+            </script>
+            <!-- thêm khu vực -->
+            <script>
+                function them_khu_vuc(i){
+                    document.getElementById("area-" + String(i)).style.display = 'flex';
+                    document.getElementById("chon-khu-vuc").style.display = 'none';
+                }
+            </script>
+            <!-- bật tắt tưới định kỳ -->
+            <script>
+                function bat_tat_tuoi(a,b){
+                    if(document.getElementById("icon-add-" + String(a) + "-" + String(b)).src.search("Off") !=-1){
+                        document.getElementById("icon-add-" + String(a) + "-" + String(b)).src = "img/Toggle On.png";
+                    }  
+                    else {
+                        document.getElementById("icon-add-" + String(a) + "-" + String(b)).src = "img/Toggle Off.png";
+                    }
+                }
+                
+            </script>
+            <!-- tạo lịch tưới -->
+            <script>
+                function tao_lich_tuoi(i){
+                    var html = document.getElementById("khung-chi-tiet-" + String(i));
+                    var a = document.getElementById("input-time-" + String(i) + "-2").value;
+                    var b = document.getElementById("input-time-" + String(i) + "-3").value;
+                    var c = document.getElementById("select-" + String(i) + "-1").value;
+                    var d = document.getElementById("input-time-" + String(i) + "-1").value;
+                    var e = document.getElementById("select-" + String(i) + "-2").value;
+                    var f = html.innerHTML.search('"add-' + String(i) +'-');
+                    var r=0;
+                    if(f != -1){
+                        r = Number(html.innerHTML[f+6]) + 1;
+                    }
+                    else r=1;
+
+                    if (html){
+                        var html_add_detail = `
+                        <div class = "chi-tiet">
+                            <div class = "dinh-danh">
+                                <p class = "mo-ta mo-ta-them">${a}:${b} ${c}</p>
+                                <p class = "mo-ta mo-ta-them">${d} phút</p>
+                                <p class = "mo-ta mo-ta-them">${e}</p>
+                            </div>
+                            
+                            <button class = "add" id = "add-${i}-${r}" onclick = "bat_tat_tuoi(${i},${r});">
+                                <img class = "icon-add" id = "icon-add-${i}-${r}" src = "img/Toggle On.png" alt='icon "add"' />
+                            </button>
+                        </div>
+                        `;
+                    
+                    html.insertAdjacentHTML('afterbegin', html_add_detail);
+                    }
+                } 
+            </script>
+            
+        </div>
+    </body>
+
+</html>
