@@ -1,0 +1,231 @@
+
+.DieuHuong-auto{
+    align-items: flex-start;
+    display: flex;
+    height: 67px;
+    justify-content: flex-end;
+    left: 13px;
+    min-width: 234px;
+    position: absolute;
+    top: 528px;
+}
+
+.main-auto-watering{
+    align-items: flex-start ;
+    display: flex ;
+    flex-direction: column ;
+    left: 252px ;
+    min-height: 246px ;
+    position: absolute ;
+    top: 105px ;
+    width: 1261px ;
+    justify-content: space-around ;
+    padding: 63px 111px 80px 80px ;
+}
+
+.w-area{
+    align-items: flex-start ;
+    display: none ;
+    flex-direction: row;
+    min-width: 1005px ;
+    position: relative;
+    justify-content: space-between;
+    margin: 15px 0;
+    min-height: 55px;
+
+}
+
+#add-area{
+    display: flex ;
+}
+
+.col-1{
+    align-items: center ;
+    display: flex ;
+    flex-direction: column ;
+    min-height: 55px ;
+    min-width: 965px ;
+}
+
+.dai-dien{
+    align-items: center ;
+    display: flex ;
+    flex-direction: row ;
+    justify-content: space-between;
+    border-radius: 100px ;
+    box-shadow: 5px 5px 10px #00000040 ;
+    height: 55px;
+    min-width: 965px ;
+}
+
+.dinh-dang-area{
+    background-color: #5DB075 ;
+}
+
+.ten{
+    height: 50px ;
+    letter-spacing: 0 ;
+    line-height: 50px ;
+    min-width: 217px ;
+    white-space: nowrap ;
+    margin-left: 300px;
+    font-family: "Manrope" ;
+    font-size: 30px ;
+    font-weight: 600 ;
+    font-style: normal ;
+}
+
+.dinh-dang-chu{
+    color: #ffff ;
+}
+
+.xem-them-button{
+    height: 100px;
+    width: 50px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0) ;
+    border: none;
+}
+
+.mo-rong{
+    height: 10px;
+    width: 20px;
+    margin-right: 30px;
+}
+
+.toan-khung-chi-tiet{
+    display: none;
+}
+
+.khung-chi-tiet{
+    align-items: center ;
+    background-color: #e8f9df80 ;
+    border-radius: 20px ;
+    display: flex ;
+    flex-direction: row;
+    gap: 242px ;
+    height: 111px ;
+    justify-content: space-around ;
+    margin-left: 40px ;
+    min-width: 855px ;
+    padding: 0 15px ;
+}
+
+.chi-tiet{
+    align-items: flex-start ;
+    display: flex ;
+    gap: 17px ;
+    margin-bottom: 1.64px ;
+    min-width: 401px ;
+}
+
+.chi-tiet-nho{
+    background-color: #ffff ;
+    border-radius: 10px ;
+    box-shadow: 0px 4px 4px #00000040 ;
+    height: 53px ;
+    min-width: 192px ;
+    justify-content: center;
+    text-align: center;
+}
+
+.input-do-am{
+    height: 33px ;
+    letter-spacing: 0 ;
+    white-space: nowrap ;
+    line-height: 40px;
+    max-width: 180px ;
+    color: #787878 ;
+    font-family: "Manrope" ;
+    font-size: 18px ;
+    font-weight: 100 ;
+    font-style: normal ;
+    margin: 10px 0 ;
+    border: none ;
+}
+
+.do-am{
+    height: 33px ;
+    letter-spacing: 0 ;
+    white-space: nowrap ;
+    line-height: 40px;
+    min-width: 146px ;
+    color: #787878 ;
+    font-family: "Manrope" ;
+    font-size: 18px ;
+    font-weight: 100 ;
+    font-style: normal ;
+    margin: 10px 0 ;
+}
+
+.khung-xac-nhan{
+    background-color: #588364 ;
+    border-radius: 20px ;
+    box-shadow: 0px 4px 4px #00000040 ;
+    height: 67px ;
+    width: 141px ;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    /* animation: button-xac-nhan 0.5s; */
+}
+
+@keyframes button-xac-nhan{
+    from {background-color: rgb(88, 131, 100);}
+    to {background-color: rgba(88,131,100, 0.5);}
+}
+
+.xac-nhan{
+    height: 40px ;
+    letter-spacing: 0 ;
+    line-height: 40px ;
+    white-space: nowrap ;
+    min-width: 100px ;
+    color: #ffff ;
+    font-family: "Manrope" ;
+    font-size: 24px ;
+    font-weight: 300 ;
+    font-style: normal ;
+    margin: 15px 0;
+}
+
+.close{
+    height: 48px ;
+    position: relative ;
+    width: 32px ;
+    margin: 0 10px ;
+}
+
+.dinh-dang-area-them{
+    background-color: #ffff;
+}
+
+.dinh-dang-chu-them{
+    color: #5DB075;
+}
+
+#chon-khu-vuc{
+    align-items: center ;
+    display: none ;
+    flex-direction: column;
+    justify-content: flex-start ;
+    margin-left: 20px ;
+    min-width: 855px ;
+    border-radius: 30px;
+    margin-top: 15px;
+    background-color: #E8F9DF;
+    text-align: center;
+}
+
+.ten-khu-vuc{
+    height: 26px ;
+    letter-spacing: 0 ;
+    white-space: nowrap ;
+    line-height: 26px;
+    color: #474957;
+    font-family: "Manrope" ;
+    font-size: 26px ;
+    font-weight: 400 ;
+    font-style: normal ;
+    margin: 10px 20px;
+}
