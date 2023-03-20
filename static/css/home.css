@@ -54,6 +54,17 @@ ul li a{
     margin: 2px 0;
     text-decoration: none;
     color: #878787;
+    background: #F9F9F9;
+}
+ul li .active a{
+    display: flex;
+    width: 99%;
+    height: 40px;
+    align-items: center;
+    padding: 5px 0;
+    margin: 2px 0;
+    text-decoration: none;
+    color: #878787;
     background: rgba(93, 176, 117, 0.12);
 }
 li a img{
