@@ -66,16 +66,16 @@
             </div>
             <hr>
             <div class="dash-board">
-                <select name="" id="">
+                <select name="" id="" onchange="document.location.href=this.value">
                     {% for area in area %}
-                    <option value="{{area.Name}}">{{area.Name}} </option>
+                    <option value="{{url_for('login')}}">{{area.Name}} </option>
                     {% endfor %}
                 </select>
                 <div class="board">
                     <div class="row">
                         <div class="card1">
                             <div class="title">
-                                <p>{{record[0].Tempdata}}</p>
+                                <p>{{temp_record[0].Tempdata}}</p>
                             </div>
                             <div class="content">
                                 <p>Nhiệt độ (oC)</p>
@@ -83,7 +83,7 @@
                         </div>
                         <div class="card2">
                             <div class="title">
-                                <p>{{record[0].Moistdata}}</p>
+                                <p>{{moist_record[0].Moistdata}}</p>
                             </div>
                             <div class="content">
                                 <p>Độ Ẩm (%)</p>
@@ -93,7 +93,7 @@
                     <div class="row">
                         <div class="card3">
                             <div class="title">
-                                <p>{{record[0].Lightdata}}</p>
+                                <p>{{light_record[0].Lightdata}}</p>
                             </div>
                             <div class="content">
                                 <p>Ánh sáng (oK)</p>

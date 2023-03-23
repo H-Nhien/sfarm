@@ -43,13 +43,19 @@ def logout():
 def home():
     if 'loggedin' in session:
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM record WHERE Time IN (SELECT max(Time) FROM record WHERE Date IN(SELECT max(Date) FROM record))')
-        record = cursor.fetchall()
+        cursor.execute('SELECT * FROM temp_record WHERE Time IN (SELECT max(Time) FROM temp_record WHERE Date IN(SELECT max(Date) FROM temp_record))')
+        temp_record = cursor.fetchall()
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM light_record WHERE Time IN (SELECT max(Time) FROM light_record WHERE Date IN(SELECT max(Date) FROM light_record))')
+        light_record = cursor.fetchall()
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM moist_record WHERE Time IN (SELECT max(Time) FROM moist_record WHERE Date IN(SELECT max(Date) FROM moist_record))')
+        moist_record = cursor.fetchall()
         cursor.execute('SELECT Status FROM `pumper` WHERE A_ID = 1')
         status = cursor.fetchall()
         cursor.execute('SELECT * FROM `area`')
         area = cursor.fetchall()     
-        return render_template("home.html", record = record, status=status, area=area)
+        return render_template("home.html", temp_record = temp_record, light_record = light_record, moist_record = moist_record, status=status, area=area)
     return redirect(url_for('login'))
 
 @app.route("/signin", methods =['GET', 'POST'])
