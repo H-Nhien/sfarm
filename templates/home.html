@@ -66,9 +66,13 @@
             </div>
             <hr>
             <div class="dash-board">
-                <select name="" id="" onchange="document.location.href=this.value">
+                <div class="a-name">
+                    <h1>{{name[0].Name}}</h1>
+                </div>
+                <select name="" id="mySelect" onchange="change_area()">
+                    <option value="{{area[0].A_ID}}">{{area[0].Name}} </option>
                     {% for area in area %}
-                    <option value="{{url_for('login')}}">{{area.Name}} </option>
+                    <option value="{{area.A_ID}}">{{area.Name}} </option>
                     {% endfor %}
                 </select>
                 <div class="board">
@@ -113,6 +117,12 @@
         </div>
         <div class="clear"></div>
     </div>
+    <script>
+        function change_area(){
+            area = document.getElementById("mySelect").value;
+            window.location.href = "{{url_for('home')}}?area="+area;
+        }
+    </script>
     
 </body>
 </html>
